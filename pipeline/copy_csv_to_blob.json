@@ -19,7 +19,7 @@
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "FileServerReadSettings",
-							"recursive": true
+							"recursive": false
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
@@ -128,7 +128,7 @@
 						"parameters": {
 							"fileName": "categories.csv",
 							"dailyFolder": {
-								"value": "@formatDateTime('yyyy-MM-dd')",
+								"value": "@formatDateTime( utcnow(),'yyyy-MM-dd')",
 								"type": "Expression"
 							}
 						}
