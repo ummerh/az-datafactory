@@ -1,0 +1,17 @@
+{
+	"name": "demofileshare",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "C:\\SharedDrive\\nightly",
+			"userId": "ummerh",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzOGU4NzZiMC1lMGE0LTQ2NmItOTRlZC1mNTQyMzAyNGRkYzUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "demoselfhostedir",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
