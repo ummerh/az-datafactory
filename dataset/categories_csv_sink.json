@@ -1,0 +1,26 @@
+{
+	"name": "categories_csv_sink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "demoblobstore1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "categories.csv",
+				"folderPath": {
+					"value": "@formatDateTime('yyyy-MM-dd')",
+					"type": "Expression"
+				},
+				"container": "/nightly"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

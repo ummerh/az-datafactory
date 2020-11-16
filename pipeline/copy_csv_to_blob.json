@@ -18,7 +18,8 @@
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
-							"type": "FileServerReadSettings"
+							"type": "FileServerReadSettings",
+							"recursive": true
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
@@ -27,7 +28,8 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "PreserveHierarchy"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -125,13 +127,16 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"fileName": "categories.csv",
-							"dailyFolder": "sample"
+							"dailyFolder": {
+								"value": "@formatDateTime('yyyy-MM-dd')",
+								"type": "Expression"
+							}
 						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText1",
+						"referenceName": "categories_csv_sink",
 						"type": "DatasetReference"
 					}
 				]
