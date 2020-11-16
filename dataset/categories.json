@@ -1,0 +1,42 @@
+{
+	"name": "categories",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "demofileshare",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"fileName": {
+				"type": "string",
+				"defaultValue": "sample.csv"
+			},
+			"dailyFolder": {
+				"type": "string",
+				"defaultValue": "sample"
+			}
+		},
+		"folder": {
+			"name": "nightly"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": {
+					"value": "@dataset().fileName",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().dailyFolder",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
