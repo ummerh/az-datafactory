@@ -10,9 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "categories.csv",
 				"folderPath": {
-					"value": "@formatDateTime('yyyy-MM-dd')",
+					"value": "@formatDateTime(utcnow(), 'yyyy-MM-dd')",
 					"type": "Expression"
 				},
 				"container": "nightly"
