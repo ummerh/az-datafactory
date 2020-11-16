@@ -15,7 +15,7 @@
 					"value": "@formatDateTime('yyyy-MM-dd')",
 					"type": "Expression"
 				},
-				"container": "/nightly"
+				"container": "nightly"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
