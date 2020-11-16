@@ -1,5 +1,5 @@
 {
-	"name": "categories",
+	"name": "csv_files",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "demofileshare",
