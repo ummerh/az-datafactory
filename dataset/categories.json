@@ -8,7 +8,7 @@
 		"parameters": {
 			"fileName": {
 				"type": "string",
-				"defaultValue": "sample.csv"
+				"defaultValue": "categories.csv"
 			},
 			"dailyFolder": {
 				"type": "string",
