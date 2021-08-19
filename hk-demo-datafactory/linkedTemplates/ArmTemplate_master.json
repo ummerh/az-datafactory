@@ -1,0 +1,91 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "hk-demo-datafactory"
+		},
+		"demoblobstore1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'demoblobstore1'"
+		},
+		"demofileshare_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'demofileshare'"
+		},
+		"eformsdb_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'eformsdb'"
+		},
+		"eformslocaldb_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'eformslocaldb'"
+		},
+		"nyctaxdata2981598973_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'nyctaxdata2981598973'"
+		},
+		"demofileshare_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\SharedDrive\\nightly"
+		},
+		"demofileshare_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "ummerh"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "hk-demo-datafactory_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"demoblobstore1_connectionString": {
+						"value": "[parameters('demoblobstore1_connectionString')]"
+					},
+					"eformsdb_connectionString": {
+						"value": "[parameters('eformsdb_connectionString')]"
+					},
+					"nyctaxdata2981598973_connectionString": {
+						"value": "[parameters('nyctaxdata2981598973_connectionString')]"
+					},
+					"demofileshare_password": {
+						"value": "[parameters('demofileshare_password')]"
+					},
+					"eformslocaldb_connectionString": {
+						"value": "[parameters('eformslocaldb_connectionString')]"
+					},
+					"demofileshare_properties_typeProperties_host": {
+						"value": "[parameters('demofileshare_properties_typeProperties_host')]"
+					},
+					"demofileshare_properties_typeProperties_userId": {
+						"value": "[parameters('demofileshare_properties_typeProperties_userId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

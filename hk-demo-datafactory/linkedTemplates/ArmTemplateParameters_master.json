@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "hk-demo-datafactory"
+		},
+		"demoblobstore1_connectionString": {
+			"value": ""
+		},
+		"demofileshare_password": {
+			"value": ""
+		},
+		"eformsdb_connectionString": {
+			"value": ""
+		},
+		"eformslocaldb_connectionString": {
+			"value": ""
+		},
+		"nyctaxdata2981598973_connectionString": {
+			"value": ""
+		},
+		"demofileshare_properties_typeProperties_host": {
+			"value": "C:\\SharedDrive\\nightly"
+		},
+		"demofileshare_properties_typeProperties_userId": {
+			"value": "ummerh"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
